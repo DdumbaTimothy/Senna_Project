@@ -1,0 +1,26 @@
+# --- The Brain ---
+google-generativeai>=0.8.3  # Access to Gemini 3.0 Pro/Flash
+langgraph>=0.2.0            # The Orchestration Loop
+langchain-core              # Underlying definitions
+langchain-google-genai      # Gemini integration for LangChain
+
+# --- The Hands (Tools) ---
+composio-core               # Socials (X, LinkedIn) & GCal Tools
+composio-langgraph          # Composio integration for LangGraph
+tavily-python               # Web Search (Market Prices)
+
+# --- The Memory (Database) ---
+supabase                    # PostgreSQL + Vector interactions
+vecs                        # Vector client for Postgres
+
+# --- The Interface (Server) ---
+fastapi                     # To run the Webhook for WhatsApp
+uvicorn                     # Server runner
+python-multipart            # For handling file uploads (PDFs)
+python-dotenv               # Managing secrets
+streamlit                   # For the web UI
+python-docx                 # For generating Word documents
+
+# --- Utilities ---
+pydantic                    # Data validation (Compliance)
+httpx                       # Async requests
