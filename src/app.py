@@ -123,8 +123,15 @@ if prompt := st.chat_input("Type your request..."):
             
             # Extract the LATEST response
             last_msg = full_response["messages"][-1]
-            response_text = last_msg.content if hasattr(last_msg, 'content') else str(last_msg)
-
+            if hasattr(last_msg, 'content'):
+                if isinstance(last_msg.content, list):
+                    response_text = " ".join([item.get("text", "") for item in last_msg.content if isinstance(item, dict) and "text" in item]).strip()
+                    if not response_text:
+                        response_text = str(last_msg.content)
+                else:
+                    response_text = str(last_msg.content)
+            else:
+                response_text = str(last_msg)
             # 4. RENDER OUTPUT
             if user_role == "GOV":
                 # 1. REJECTION LOGIC
