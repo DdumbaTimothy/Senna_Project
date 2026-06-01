@@ -3,7 +3,7 @@ google-generativeai>=0.8.3  # Access to Gemini 3.0 Pro/Flash
 langgraph>=0.2.0            # The Orchestration Loop
 langchain-core              # Underlying definitions
 langchain-google-genai      # Gemini integration for LangChain
-
+langchain-community         # Community integrations (Tavily search)
 # --- The Hands (Tools) ---
 composio-core               # Socials (X, LinkedIn) & GCal Tools
 composio-langgraph          # Composio integration for LangGraph
